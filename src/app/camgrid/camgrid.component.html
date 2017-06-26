@@ -1,0 +1,9 @@
+<p-dataTable [value]="data">
+  <p-column *ngFor="let col of columns" field="{{col.field}}" header="{{col.header}}"
+            [sortable]="col.sortable" [filter]="col.filter" footer={{col.footer}} [hidden]="col.hidden"
+            [sortField]="col.sortField" [expander]="col.expander">
+    <ng-template  pTemplate="body" *ngIf="col.template">
+     <span [innerHTML]="col.template"></span>
+    </ng-template>
+  </p-column>
+</p-dataTable>
